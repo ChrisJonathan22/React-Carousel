@@ -1,0 +1,136 @@
+.carousel-container, .show-all-items {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+
+    .title {
+        color: rgb(90, 88, 79);
+        font-size: 2.5em;
+    }
+
+    .all-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-weight: 600;
+
+        .right-icon {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                display: inline-block;
+                padding-right: 3px;
+                vertical-align: middle;
+                font-weight: 900;
+                color: rgb(49, 47, 47);
+                content: "\f054";
+                padding-bottom: 3px;
+            }
+        }
+    }
+
+    .slick-slider {
+
+        .slick-arrow {
+            &:hover {
+                display: block !important;
+            }
+        }
+
+        .slick-prev, .slick-next {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                display: inline-block;
+                padding-right: 3px;
+                vertical-align: middle;
+                font-weight: 900;
+                color: rgb(49, 47, 47);
+            }
+        }
+
+        .slick-prev {
+            &::before {
+                content: "\f053";
+            }
+        }
+
+        .slick-next {
+            &::before {
+                content: "\f054";
+            }
+        }
+    }
+
+    .carousel-item-container {
+        width: 95% !important;
+        height: 450px;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        .carousel-item-container-inner-top {
+            height: 50% !important;
+            width: 100%;
+
+            .carousel-image {
+                height: 100% !important;
+                width: 100%;
+            }
+        }
+
+        .carousel-item-container-inner-bottom {
+            height: 50%;
+
+            .carousel-category {
+                font-size: 1.1em;
+                color: rgb(102, 101, 95);
+                margin: 0;
+                padding-top: 5px;
+            }
+
+            .carousel-title {
+                font-size: 1.2em;
+                color: rgb(76, 75, 69);
+                margin: 0;
+            }
+
+            .carousel-price {
+                font-size: 0.9em;
+                margin: 0;
+            }
+
+            .carousel-rating {
+                font-size: 0.8em;
+                margin: 0;
+                padding-top: 5px;
+                position: relative;
+
+                .carousel-review-count {
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+
+.show-all-items {
+    width: 70% !important;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    .title {
+        text-align: center;
+    }
+
+    .carousel-item-container {
+        height: auto;
+    }
+}
