@@ -9,11 +9,14 @@
         font-size: 2.5em;
     }
 
-    .all-link {
+    .show-all-items-btn {
         position: absolute;
         top: 0;
         right: 0;
         font-weight: 600;
+        border: 0;
+        background-color: #fff;
+        cursor: pointer;
 
         .right-icon {
             &::before {
@@ -24,7 +27,7 @@
                 font-weight: 900;
                 color: rgb(49, 47, 47);
                 content: "\f054";
-                padding-bottom: 3px;
+                padding-bottom: 2px;
             }
         }
     }

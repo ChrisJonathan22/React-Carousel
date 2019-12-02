@@ -108,7 +108,7 @@ export default class Carousel extends Component {
                 <Data fetchData = {this.fetchData} />
                 <div className='carousel-container'>
                     <h2 className='title'>Experiences in Paris</h2>
-                    <button className='all-link' onClick={this.showAll}>See all <span className='right-icon'></span></button>
+                    <button className='show-all-items-btn' onClick={this.showAll}>See all <span className='right-icon'></span></button>
                     { data ?
                         <Slider {...carouselSettings}>
                             { data.map((item, index) => {
