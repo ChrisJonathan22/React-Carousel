@@ -77,7 +77,7 @@ export default class Carousel extends Component {
             loading: false,
             data: null,
             show: false,
-            carouselSettings : {
+            carouselSettings: {
                 dots: false,
                 arrows: true,
                 infinite: true,
@@ -105,10 +105,20 @@ export default class Carousel extends Component {
         if (show) {
             this.setState({ show: false });
         }   else this.setState({ show: true });
+       
+    }
+
+    componentDidMount() {
+        let mediaQueryList = window.matchMedia('(max-width: 600px)');
+        if (mediaQueryList.matches) {
+            this.setState({carouselSettings: {slidesToShow: 1}});
+        }
     }
 
     render() {
         let { carouselSettings, data, show } = this.state;
+        
+        
         return (
             <div>
                 <Data fetchData = {this.fetchData} />
