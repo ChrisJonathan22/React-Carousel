@@ -40,12 +40,14 @@ class ViewAllItems extends Component{
     
    render() {
     let { show } = this.state;
+    let { items } = this.props;
     return (
         <div>
-            <div className='show-all-items'>
-                <h3 className='title'>View all items</h3>
+            
                 { show ? 
-                    this.props.items.map((item, index) => {
+                    <div className='show-all-items'>
+                    <h3 className='title'>View all items</h3>
+                    {items.map((item, index) => {
                         return <div className='carousel-item-container show-all-items' key={index}>
                                     <div className='carousel-item-container-inner-top'>
                                         <img className='carousel-image' src={item.image} alt={item.title} />
@@ -57,11 +59,12 @@ class ViewAllItems extends Component{
                                     <p className='carousel-rating'><CarouselRating name="read-only" value={ item.reviews.rating } precision={0.5} readOnly size="small" /><span className='carousel-review-count'>{ item.reviews.count }</span></p>
                                     </div>
                                 </div>;
-                        }) 
+                        })}
+                    </div>    
                     :
                     null 
                 }
-            </div>
+            
         </div>
     )
   }
@@ -84,7 +87,7 @@ export default class Carousel extends Component {
             }
         }
         this.fetchData = this.fetchData.bind(this);
-        this.showAll = this.showAll.bind(this);
+        this.showAllItems = this.showAllItems.bind(this);
     }
 
     async fetchData(endpoint) {
@@ -97,8 +100,11 @@ export default class Carousel extends Component {
         }
     }
 
-    showAll() {
-        this.setState({ show: true });
+    showAllItems() {
+        let { show } = this.state;
+        if (show) {
+            this.setState({ show: false });
+        }   else this.setState({ show: true });
     }
 
     render() {
@@ -108,7 +114,7 @@ export default class Carousel extends Component {
                 <Data fetchData = {this.fetchData} />
                 <div className='carousel-container'>
                     <h2 className='title'>Experiences in Paris</h2>
-                    <button className='show-all-items-btn' onClick={this.showAll}>See all <span className='right-icon'></span></button>
+                    <button className='show-all-items-btn' onClick={this.showAllItems}>See all <span className='right-icon'></span></button>
                     { data ?
                         <Slider {...carouselSettings}>
                             { data.map((item, index) => {
